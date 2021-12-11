@@ -14,10 +14,15 @@ export const Provider = ({ children }) => {
 		setTodos([...todos, newTodo]);
 	}
 
+	const removeTodo = (id) => {
+		setTodos(todos.filter((todo) => todo.id !== id));
+	}
+
 	const context ={
 		todos,
 		setTodos,
 		addTodo,
+		removeTodo,
 	}
 
 	return (

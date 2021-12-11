@@ -9,6 +9,7 @@ const TodoForm = () => {
 		e.preventDefault();
 
 		addTodo(input);
+		setInput('');
 	}
 
 	return (
