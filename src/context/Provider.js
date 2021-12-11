@@ -18,11 +18,22 @@ export const Provider = ({ children }) => {
 		setTodos(todos.filter((todo) => todo.id !== id));
 	}
 
+	const completeTodo = (id) => {
+		let updatedTodos = todos.map((todo) => {
+			if (todo.id === id) {
+				todo.isComplete = !todo.isComplete;
+			}
+			return todo;
+		})
+		setTodos(updatedTodos);
+	}
+
 	const context ={
 		todos,
 		setTodos,
 		addTodo,
 		removeTodo,
+		completeTodo,
 	}
 
 	return (

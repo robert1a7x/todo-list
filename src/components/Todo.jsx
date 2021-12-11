@@ -4,13 +4,16 @@ import { MdDelete } from 'react-icons/md';
 import { RiEdit2Fill } from 'react-icons/ri';
 
 const Todo = () => {
-	const { todos, removeTodo } = useContext(myContext);
+	const { todos, removeTodo, completeTodo } = useContext(myContext);
 
 	return (
 		<div>
-			{ todos.map(({ id, todo }) => (
+			{ todos.map(({ id, todo, isComplete }) => (
 				<div key={ id }>
-					<div>
+					<div 
+						onClick={ () => completeTodo(id) }
+						style={ isComplete ? { textDecoration: 'line-through', opacity: '0.4' } : null }
+					>
 						{ todo }
 					</div>
 					<div>
