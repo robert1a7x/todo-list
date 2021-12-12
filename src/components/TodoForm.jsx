@@ -14,24 +14,26 @@ const TodoForm = () => {
   };
 
   return editing ? (
-    <form onSubmit={ handleSubmit }>
+    <form className="todo-form" onSubmit={ handleSubmit }>
       <input
+        className="todo-input edit"
         placeholder="Edite a tarefa"
         type="text"
         value={ input }
         onChange={ (e) => setInput(e.target.value) }
       />
-      <button>Editar</button>
+      <button className="todo-button edit">Editar</button>
     </form>
   ) : (
-    <form onSubmit={ handleSubmit }>
+    <form className="todo-form" onSubmit={ handleSubmit }>
       <input
-        placeholder="insira a tarefa"
+        className="todo-input"
+        placeholder="Insira uma tarefa"
         type="text"
         value={ input }
         onChange={ (e) => setInput(e.target.value) }
       />
-      <button>Adicionar</button>
+      <button className="todo-button">Adicionar</button>
     </form>
   );
 };

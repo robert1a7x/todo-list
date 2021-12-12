@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React, { createContext, useState } from 'react';
 
 export const myContext = createContext();
@@ -58,4 +59,8 @@ export const Provider = ({ children }) => {
 			{ children }
 		</myContext.Provider>
 	);
+};
+
+Provider.propTypes = {
+	children: PropTypes.node.isRequired,
 };

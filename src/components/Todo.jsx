@@ -9,18 +9,20 @@ const Todo = () => {
 	return (
 		<div>
 			{ todos.map(({ id, todo, isComplete }) => (
-				<div key={ id }>
-					<div 
+				<div className="todo-row" key={ id }>
+					<div
 						onClick={ () => completeTodo(id) }
 						style={ isComplete ? { textDecoration: 'line-through', opacity: '0.4' } : null }
 					>
 						{ todo }
 					</div>
-					<div>
+					<div className="icons">
 						<MdDelete
-							onClick={ (e) => removeTodo(id) }
+							className="delete-icon"
+							onClick={ () => removeTodo(id) }
 						/>  
 						<RiEdit2Fill
+							className="edit-icon"
 							onClick={ () => {
 								setEditing(true);
 								setEditData({ id, todo })
