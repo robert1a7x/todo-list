@@ -4,7 +4,7 @@ import { MdDelete } from 'react-icons/md';
 import { RiEdit2Fill } from 'react-icons/ri';
 
 const Todo = () => {
-	const { todos, removeTodo, completeTodo } = useContext(myContext);
+	const { todos, removeTodo, completeTodo, setEditing, setEditData } = useContext(myContext);
 
 	return (
 		<div>
@@ -21,7 +21,10 @@ const Todo = () => {
 							onClick={ (e) => removeTodo(id) }
 						/>  
 						<RiEdit2Fill
-
+							onClick={ () => {
+								setEditing(true);
+								setEditData({ id, todo })
+							} }
 						/>
 					</div>
 				</div>
