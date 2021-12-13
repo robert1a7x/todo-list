@@ -31,3 +31,5 @@ cd todo-list/ && npm start
 ```
 
 ## Gif da aplicação
+
+![todo-list](https://user-images.githubusercontent.com/79478208/145869110-479fae6f-4703-42dd-b209-816c6ba71c85.gif)
