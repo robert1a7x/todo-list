@@ -1,10 +1,16 @@
-import React,  { useContext } from 'react';
+import React,  { useContext, useEffect } from 'react';
 import { myContext } from '../context/Provider';
 import { MdDelete } from 'react-icons/md';
 import { RiEdit2Fill } from 'react-icons/ri';
+import { getTodosFromLocalStorage } from '../services/localStorage';
 
 const Todo = () => {
-	const { todos, removeTodo, completeTodo, setEditing, setEditData } = useContext(myContext);
+	const { todos, removeTodo, completeTodo, setEditing, setEditData, setTodos } = useContext(myContext);
+
+	useEffect(() => {
+		const todosFromLocalStorage = getTodosFromLocalStorage();
+		setTodos(todosFromLocalStorage);
+	}, []);
 
 	return (
 		<div>
