@@ -12,7 +12,7 @@ Neste projeto foi desenvolvido uma lista de tarefas simples. Ao utilizar essa ap
 
 * Salvar tarefas no Local Storage do navegador automaticamente;
 
-## Técnologias usadas
+## Tecnologias usadas
 
 > Desenvolvido usando: React, Context API, Javascript, CSS3, HTML5, ES6
 
